@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "flet-env"
+version = "0.1.0"
+description = ""
+authors = ["hitose kakazu <hi.ka1749@gmail.com>"]
+readme = "README.md"
+packages = [{include = "flet_env"}]
+
+[tool.poetry.dependencies]
+python = "3.11.1"
+flet = "^0.22.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
