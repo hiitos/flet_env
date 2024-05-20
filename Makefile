@@ -22,4 +22,4 @@ make docker-build:
 	cd app && docker build -t flet-env-image .
 
 make docker-run:
-	cd app && docker run -p 8000:8000 flet-env-image
+	cd app && docker run -p 8080:8080 flet-env-image

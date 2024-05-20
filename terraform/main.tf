@@ -40,3 +40,22 @@ resource "null_resource" "docker_image_push" {
     always_run = "${timestamp()}"
   }
 }
+
+// Create a Google Cloud Run service
+resource "google_cloud_run_service" "flet-cloud-run-app" {
+  name     = var.project_id
+  location = var.region
+
+  template {
+    spec {
+      containers {
+        image = "gcr.io/${var.project_id}/${var.image_name}:latest"
+      }
+    }
+  }
+
+  traffic {
+    percent         = 100
+    latest_revision = true
+  }
+}
