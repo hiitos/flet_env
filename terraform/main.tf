@@ -62,8 +62,8 @@ resource "google_cloud_run_service" "flet-cloud-run-app" {
 
 // Allow unauthenticated invocations of the Cloud Run service
 resource "google_cloud_run_service_iam_member" "noauth" {
-  service = google_cloud_run_service.flet-cloud-run-app.name
+  service  = google_cloud_run_service.flet-cloud-run-app.name
   location = google_cloud_run_service.flet-cloud-run-app.location
-  role = "roles/run.invoker"
-  member = "allUsers"
+  role     = "roles/run.invoker"
+  member   = "allUsers"
 }
